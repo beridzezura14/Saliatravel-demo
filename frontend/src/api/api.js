@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'hhttps://saliatravel-demo.onrender.com', // შენს backend URL
+  baseURL: 'https://saliatravel-demo.onrender.com/api', // შენს backend URL
 });
 
 
