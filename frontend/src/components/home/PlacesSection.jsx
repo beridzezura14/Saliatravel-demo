@@ -74,7 +74,7 @@ export default function PlacesSection() {
   }
 
   return (
-    <section className="w-full relative">
+    <section className="w-full relative h-[100dvh]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={1}
@@ -112,7 +112,7 @@ export default function PlacesSection() {
 
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${place.imageUrl})`, height: "100dvh" }}
+                style={{ backgroundImage: `url(${place.imageUrl})` }}
               />
               <div className="absolute inset-0 bg-black/20" />
               <div
