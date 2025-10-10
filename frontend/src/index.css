@@ -1,0 +1,114 @@
+
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+.place-swiper .swiper-pagination {
+  bottom: 2rem !important;
+}
+
+.place-swiper .swiper-pagination-bullet {
+  border: 2px solid #ffffff;
+}
+.place-swiper .swiper-pagination-bullet-active {
+  background: #22afb9 !important;
+  border: 2px solid #22afb9 ;
+
+}
+
+.country-swiper {
+  overflow: visible !important;
+  position: relative; 
+}
+
+.country-swiper .swiper-pagination {
+  bottom: -2.5rem !important;
+  overflow: visible !important; 
+}
+
+.country-swiper .swiper-pagination-bullet-active {
+  background: #22afb9 !important;
+  border: 2px solid #22afb9 ;
+}
+/* Default bullet */
+.swiper-pagination-bullet {
+  background: transparent !important;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  border: 3px solid #22afb9;
+}
+
+/* Active bullet */
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+
+
+
+.color-icon-require{
+  filter: brightness(0) saturate(100%) invert(61%) sepia(41%) saturate(753%) hue-rotate(135deg) brightness(87%) contrast(90%);
+}
+
+.footer__icon{
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(262deg) brightness(101%) contrast(103%);
+}
+
+
+
+
+/* loader.scss */
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff;
+}
+
+.loader-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.plane {
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+/* თვითმფრინავი მხოლოდ მობილურზე */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
+
+/* styles.css ან global css */
+iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+.loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
