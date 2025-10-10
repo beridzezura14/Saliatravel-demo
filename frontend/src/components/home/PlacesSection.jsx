@@ -112,7 +112,7 @@ export default function PlacesSection() {
 
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${place.imageUrl})` }}
+                style={{ backgroundImage: `url(${place.imageUrl})`, height: "100dvh" }}
               />
               <div className="absolute inset-0 bg-black/20" />
               <div
