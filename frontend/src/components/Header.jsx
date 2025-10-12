@@ -47,7 +47,7 @@ export default function Header() {
         <nav className={isOpen ? 'nav-bar active' : 'nav-bar'}>
           <ul>
             <Link to="/" onClick={handleLinkClick}><li>მთავარი</li></Link>
-            <Link to="/" onClick={handleLinkClick}><li>ჩვენს შესახებ</li></Link>
+            <Link to="/about" onClick={handleLinkClick}><li>ჩვენს შესახებ</li></Link>
             <Link to="/tours" onClick={handleLinkClick}><li>ტურები</li></Link>
             <Link to="/contact" onClick={handleLinkClick}><li>საკონტაქტო</li></Link>
 

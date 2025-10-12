@@ -112,3 +112,70 @@ iframe {
   pointer-events: none;
   transition: opacity 0.8s ease;
 }
+
+
+
+
+.img3{
+  animation: moveInfinity 4s ease infinite;
+}
+
+@keyframes moveInfinity {
+    0%{
+      left: 17%;
+    }
+    50%{
+      left: 23%;
+    }
+    100%{
+      left: 17%;
+    }
+}
+
+.passport,
+.compas {
+  animation: scale 4s ease infinite;
+}
+
+@keyframes scale {
+    0%{
+      transform: scale(0.9);
+    }
+    50%{
+      transform: scale(1.1);
+    }
+    100%{
+      transform: scale(0.9);
+    }
+}
+
+.camera {
+  animation: rotateInf 10s linear infinite;
+  transform-origin: center; /* ღერძის ცენტრი */
+}
+
+@keyframes rotateInf {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.hat{
+  animation: swing 3s ease-in-out infinite alternate;
+}
+
+@keyframes swing {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px); /* ოდნავ მარჯვნივ */
+  }
+  100% {
+    transform: translateX(-10px); /* ოდნავ მარცხნივ */
+  }
+}
