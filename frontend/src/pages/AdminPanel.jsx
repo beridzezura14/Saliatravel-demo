@@ -6,6 +6,9 @@ import RequireAdminSection from "../components/admin/RequireAdminSection";
 import ToursForm from "../components/tours/ToursForm";
 import AdminContacts from "../components/admin/AdminContacts"; 
 
+import InstaForm from "../components/InstaForm";
+
+
 import React, { useState, useEffect } from "react";
 import API from "../api/api";
 
@@ -43,7 +46,7 @@ export default function AdminPanel() {
   return (
     <div className="container mx-auto py-24">
       <h1 className="text-3xl font-bold mb-4">Admin Panel</h1>
-
+      <InstaForm />
       <PasswordSection />
       <PlacesSection />
       <CountriesSection />

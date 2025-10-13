@@ -48,7 +48,7 @@ export default function Header() {
           <ul>
             <Link to="/" onClick={handleLinkClick}><li>მთავარი</li></Link>
             <Link to="/about" onClick={handleLinkClick}><li>ჩვენს შესახებ</li></Link>
-            <Link to="/tours" onClick={handleLinkClick}><li>ტურები</li></Link>
+            <Link to="/toursPage" onClick={handleLinkClick}><li>ტურები</li></Link>
             <Link to="/contact" onClick={handleLinkClick}><li>საკონტაქტო</li></Link>
 
             <Link to="/admin" className="hover:underline" onClick={handleLinkClick}>

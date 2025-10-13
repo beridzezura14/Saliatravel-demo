@@ -18,16 +18,20 @@ const countryRoutes = require('./routes/countries');
 const requireRoutes = require("./routes/requires");
 const toursRoutes = require("./routes/tours");
 const contactRoutes = require('./routes/contact');
+const instaRoutes = require("./routes/insta");
+
 
 const initAdmin = require("./utils/initAdmin");
 initAdmin();
 
+app.use("/api/insta", instaRoutes);
 app.use('/api/auth', authRouter);
 app.use('/api/places', placesRouter);
 app.use('/api/countries', countryRoutes);
 app.use("/api/requires", requireRoutes);
 app.use("/api/tours", toursRoutes);
 app.use('/api/contacts', contactRoutes);
+app.use("/api/insta", instaRoutes);
 
 // MongoDB connect
 mongoose.connect(process.env.MONGO_URI)
@@ -40,8 +44,8 @@ mongoose.connect(process.env.MONGO_URI)
 // Serve frontend build
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-// Catch-all route for React Router
-app.get(/.*/, (req, res) => {
+// Catch-all route – **მხოლოდ React routes–ისთვის**
+app.get(/^(?!\/api).*/, (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 

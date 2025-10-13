@@ -130,7 +130,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <h3 className="text-xl text-primary font-caps mb-2">მისამართი</h3>
+            <h3 className="text-xl text-primary font-caps ">მისამართი</h3>
             <p className="text-[18px] text-black">{contact.address}</p>
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <h3 className="text-xl text-primary mb-2 font-caps">ტელეფონი</h3>
+            <h3 className="text-xl text-primary font-caps">ტელეფონი</h3>
             <p className="text-[18px] text-black">{contact.phone}</p>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <h3 className="text-xl text-primary mb-2 font-caps">მეილი</h3>
+            <h3 className="text-xl text-primary font-caps">მეილი</h3>
             <p className="text-[18px] text-black">{contact.email}</p>
           </div>
         </div>

@@ -6,7 +6,7 @@ import ChangePassword from "./pages/ChangePassword";
 import Header from "./components/Header";
 import AdminRoute from "./components/AdminRoute";
 import TourDetails from "./pages/TourDetails";
-import ToursSection from "./components/tours/ToursSection";
+import ToursPage from "./pages/ToursPage";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Footer from "./components/Footer";
@@ -121,7 +121,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/tours/:id" element={<TourDetails />} />
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/tours" element={<ToursSection />} />
+        <Route path="/toursPage" element={<ToursPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
