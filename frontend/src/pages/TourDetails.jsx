@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/api";
+import InstaHome from "../components/InstaHome";
 
 export default function TourDetails() {
   const { id } = useParams();
@@ -70,97 +71,102 @@ export default function TourDetails() {
 
   // 🔹 მთავარი ნამდვილი შიგთავსი
   return (
-    <div className="max-w-[90%] mx-auto mt-32 mb-20">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-8 lg:gap-4">
-        <button
-          onClick={() => navigate(-1)}
-          className="w-[130px] py-2 bg-[#22afb9] text-white rounded-full hover:bg-[#1c8b95] transition"
-        >
-          ← უკან
-        </button>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-caps text-[#22afb9] text-center md:text-right">
-          {tour.head}
-        </h1>
-      </div>
 
-      <div className="w-full mb-6">
-        <img
-          src={tour.img}
-          alt={tour.head}
-          className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg border-2 border-[#22afb9]"
-        />
-      </div>
-
-      <p className="text-[#3b3b3b] border-b-2 border-primary pb-6 lg:mt-6 text-lg md:text-xl">
-        {tour.includes}
-      </p>
-
-      <div className="flex flex-col lg:flex-row gap-8">
-        <div className="lg:w-1/2 mt-6">
-          <h2 className="text-2xl md:text-3xl font-caps mb-4 text-[#22afb9]">
-            დღეები
-          </h2>
-          {tour.details.day.map((d, i) => (
-            <div key={i} className="mb-3 border rounded-lg shadow-sm bg-[#fff]">
-              <button
-                onClick={() => toggleDay(i)}
-                className="w-full text-left p-4 flex justify-between items-center border-l-4 border-[#22afb9] focus:outline-none"
-              >
-                <span className="font-semibold text-[#3b3b3b] text-lg md:text-xl">
-                  {d.head}
-                </span>
-                <span className="text-[#22afb9] font-bold">
-                  {openDays[i] ? "−" : "+"}
-                </span>
-              </button>
-              {openDays[i] && (
-                <p className="p-4 pt-0 text-[#3b3b3b]">{d.paragraph}</p>
-              )}
+    <div>
+      <div className="max-w-[90%] mx-auto mt-32 mb-20">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-8 lg:gap-4">
+          <button
+            onClick={() => navigate(-1)}
+            className="w-[130px] py-2 bg-[#22afb9] text-white rounded-full hover:bg-[#1c8b95] transition"
+          >
+            ← უკან
+          </button>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-caps text-[#22afb9] text-center md:text-right">
+            {tour.head}
+          </h1>
+        </div>
+  
+        <div className="w-full mb-6">
+          <img
+            src={tour.img}
+            alt={tour.head}
+            className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg border-2 border-[#22afb9]"
+          />
+        </div>
+  
+        <p className="text-[#3b3b3b] border-b-2 border-primary pb-6 lg:mt-6 text-lg md:text-xl">
+          {tour.includes}
+        </p>
+  
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="lg:w-1/2 mt-6">
+            <h2 className="text-2xl md:text-3xl font-caps mb-4 text-[#22afb9]">
+              დღეები
+            </h2>
+            {tour.details.day.map((d, i) => (
+              <div key={i} className="mb-3 border rounded-lg shadow-sm bg-[#fff]">
+                <button
+                  onClick={() => toggleDay(i)}
+                  className="w-full text-left p-4 flex justify-between items-center border-l-4 border-[#22afb9] focus:outline-none"
+                >
+                  <span className="font-semibold text-[#3b3b3b] text-lg md:text-xl">
+                    {d.head}
+                  </span>
+                  <span className="text-[#22afb9] font-bold">
+                    {openDays[i] ? "−" : "+"}
+                  </span>
+                </button>
+                {openDays[i] && (
+                  <p className="p-4 pt-0 text-[#3b3b3b]">{d.paragraph}</p>
+                )}
+              </div>
+            ))}
+          </div>
+  
+          <div className="lg:w-1/2 flex flex-col gap-8 lg:mt-6">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-caps mb-4 text-[#22afb9]">
+                ფასში შედის
+              </h2>
+              <ul className="list-disc pl-6 text-[#3b3b3b]">
+                {tour.details.inPrice.map((item, i) => (
+                  <li key={i} className="mb-1">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
-        </div>
-
-        <div className="lg:w-1/2 flex flex-col gap-8 lg:mt-6">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-caps mb-4 text-[#22afb9]">
-              ფასში შედის
-            </h2>
-            <ul className="list-disc pl-6 text-[#3b3b3b]">
-              {tour.details.inPrice.map((item, i) => (
-                <li key={i} className="mb-1">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="text-2xl md:text-3xl font-caps mb-4 text-[#22afb9]">
-              აუცილებელია გადასახდელი
-            </h2>
-            <ul className="list-disc pl-6 text-[#3b3b3b]">
-              {tour.details.mustPay.map((item, i) => (
-                <li key={i} className="mb-1">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="text-2xl md:text-3xl font-caps mb-4 text-[#22afb9]">
-              დამატებითი ტურები
-            </h2>
-            <ul className="list-disc pl-6 text-[#3b3b3b]">
-              {tour.details.additionTours.map((item, i) => (
-                <li key={i} className="mb-1">
-                  {item}
-                </li>
-              ))}
-            </ul>
+  
+            <div>
+              <h2 className="text-2xl md:text-3xl font-caps mb-4 text-[#22afb9]">
+                აუცილებელია გადასახდელი
+              </h2>
+              <ul className="list-disc pl-6 text-[#3b3b3b]">
+                {tour.details.mustPay.map((item, i) => (
+                  <li key={i} className="mb-1">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+  
+            <div>
+              <h2 className="text-2xl md:text-3xl font-caps mb-4 text-[#22afb9]">
+                დამატებითი ტურები
+              </h2>
+              <ul className="list-disc pl-6 text-[#3b3b3b]">
+                {tour.details.additionTours.map((item, i) => (
+                  <li key={i} className="mb-1">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
+                
       </div>
+      <InstaHome />
     </div>
   );
 }
